@@ -1,0 +1,138 @@
+#include <SoftwareSerial.h> //블루투스 통신을 위해 입출력데이터 핀 -> RX TX 핀으로 동작
+#define BT_RXD 12 // RX SoftwareSerial Pin
+#define BT_TXD 13 // TX SoftwareSerial Pin
+String receiveStr = ""; // 블루투스로 수신되는 명령을 입력 받기 위한 문자열 선언
+String Mode;  // 구동 모드를 설정 하기 위한 변수
+SoftwareSerial bluetooth(BT_RXD, BT_TXD);  //SoftwareSerial 클래스 생성자
+
+#define A_1A 6 //왼쪽 모터 핀 설정 (pwm)
+#define A_1B 10//  (pwm)
+#define B_1A 9 //오른쪽 모터 핀 설정  (pwm)
+#define B_1B 11//  (pwm)
+#define motorLSpeed 120 //왼쪽 모터 속도 설정
+#define motorRSpeed 120 //오른쪽 모터 속도 설정
+
+#define IR_Sensor A0 //적외선 센서 핀  설정
+#define trigPinL 4 //왼쪽 초음파 센서 트리거 핀 설정
+#define echoPinL 3 //왼쪽 초음파 센서 에코 핀 설정 (pwm)
+#define trigPinR 8 //오른쪽 초음파 센서 트리거 핀 설정
+#define echoPinR 5 //오른쪽 초음파 센서 에코 핀 설정 (pwm)
+void setup() {
+  Serial.begin(9600); //보드레이트 설정
+  bluetooth.begin(9600); //시리얼 통신을 초기화하고 통신 속도 설정
+  pinMode(A_1A, OUTPUT); //---------------------------------------핀모드 설정
+  pinMode(A_1B, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+  pinMode(IR_Sensor, INPUT);
+  pinMode(trigPinL, OUTPUT);
+  pinMode(echoPinL, INPUT);
+  pinMode(trigPinR, OUTPUT);
+  pinMode(echoPinR, INPUT); //---------------------------------------------------
+  digitalWrite(A_1A, LOW); //--------------모터 초기상태 LOW로 초기화
+  digitalWrite(A_1B, LOW);
+  digitalWrite(B_1A, LOW);
+  digitalWrite(B_1B, LOW); //-------------------------------------------------------
+}
+void loop() {
+  receiveStr = "";
+  while (bluetooth.available()) {
+    char myChar = (char)bluetooth.read(); //bluetooth int 값을 char 형식으로 변환
+    receiveStr += myChar; //수신되는 문자를 receiveStr에 모두 붙임 
+    delay(50); //수신 문자열 끊김 방지
+    Serial.print(receiveStr); // 검토를 위해 시리얼 모니터에 송신 데이터를 출력한다.
+    if (receiveStr.length() > 0) Mode = receiveStr; 
+   // 송신 데이터가 있을 때만 전역변수  Mode에 데이터를 저장하여 모드를 한번만 설정(클릭)하여도 loop 함수 내에서 모드가 유지되도록 한다.
+  }
+  if (Mode == "F") forward(); //데이터를 통해 구동 모드를 설정한다.
+  else if (Mode == ＂B＂) back(); //모드는 상호 배타적 관계이므로 if – else if문을 사용한다.
+  else if (Mode == "L") left();
+  else if (Mode == "R") right();
+  else if (Mode == "S") stop();
+  else if (Mode == "A") autodrive();
+}
+void autodrive() {
+  int RightDist = getStableDistanceCM(echoPinR, trigPinR); // 초음파 센서의 출력 값을 cm로 변환하여 왼쪽 오른쪽 각각 장애물과의        거리를 저장한다. 
+  int LeftDist = getStableDistanceCM(echoPinL, trigPinL);
+  int FrontDist = IR_Distance(); // 적외선 센서의 출력 값을 정면 장애물과의 거리를 저장한다.
+  if (FrontDist < 8) {  				    // 정면의 거리가 8cm이하이면,
+    back();  delay(300);                                 	 // 뒤로 이동 후
+    stop(); delay(100);                                   	// 잠시 멈춤
+    if (LeftDist > RightDist) {                                // 좌측 우측 장애물 거리를 비교하여 이동방향 결정하는 조건문
+        	     left(); delay(200);                     
+    }
+    else {
+    	      right(); delay(200);
+    }
+  }
+  else {                                                                         //정면의 거리가 8cm를 초과하면,
+    forward();                                                  	// 전진 모드 유지
+    if (LeftDist < 6 || LeftDist >  150) {                // 왼쪽 초음파 센서가 장애물에 근접하거나, 너무 근접하여 값이 튈 경우
+      back();  delay(150);				// 뒤로 이동 후
+      right(); delay(200);				// 우회전
+    }
+    if (RightDist < 6 || RightDist > 150) {	// 오른쪽 초음파 센서가 장애물에 근접하거나, 너무 근접하여 값이 튈 경우
+      back();  delay(150);				//뒤로 이동 후 
+      left(); delay(200);				//좌회전
+    }
+  }
+}
+void forward() {
+  analogWrite(A_1A, motorLSpeed);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1A, motorRSpeed - 20);
+  analogWrite(B_1B, 0);
+}
+
+void left() {
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1A, motorRSpeed);
+  analogWrite(B_1B, 0);
+}
+
+void right() {
+  analogWrite(A_1A, motorLSpeed + 10);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1A, 0);
+  analogWrite(B_1B, 0);
+}
+
+void back() {
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, motorLSpeed);
+  analogWrite(B_1A, 0);
+  analogWrite(B_1B, motorRSpeed);
+}
+
+void stop() {
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1A, 0);
+  analogWrite(B_1B, 0);
+}
+float IR_Distance() {
+  int adc = analogRead(IR_Sensor);
+  float volts = adc * 5. / 1023.; // 전압으로 변환 (적외선 센서는 0~1023 까지의 값을 출력한다.)
+  float distance = 12.08*pow(volts, -1.08); // cm로 변환하는 소스 (오픈소스 활용)
+  return distance * 2; 
+}
+
+Float getDistanceCM(int echoPin, int trigPin) { //echoPin 의  PWM 값을 읽어와 CM로 변환한다.
+  digitalWrite(echoPin, LOW);
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  float distance = pulseIn(echoPin, HIGH) / 58;
+  return distance;
+}
+
+Float getStableDistanceCM(int echoPin, int trigPin) {    //평균값을 구하여 신뢰도 높은 값을 반환한다.
+  int CmSum = 0;
+  for (int i = 0; i < 8; i++) {
+    CmSum += getDistanceCM(echoPin, trigPin);
+  }
+  return CmSum / 8;
+}

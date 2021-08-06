@@ -1,0 +1,20 @@
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.csprojAssemblyReference.cache
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.Form1.resources
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.Properties.Resources.resources
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.csproj.GenerateResource.cache
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.csproj.CoreCompileInputs.cache
+C:\Users\ycy\Desktop\TestServer1\bin\Debug\TestServer1.exe.config
+C:\Users\ycy\Desktop\TestServer1\bin\Debug\TestServer1.exe
+C:\Users\ycy\Desktop\TestServer1\bin\Debug\TestServer1.pdb
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.exe
+C:\Users\ycy\Desktop\TestServer1\obj\Debug\TestServer1.pdb
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\bin\Debug\TestServer1.exe.config
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\bin\Debug\TestServer1.exe
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\bin\Debug\TestServer1.pdb
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.csprojAssemblyReference.cache
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.Form1.resources
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.Properties.Resources.resources
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.csproj.GenerateResource.cache
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.csproj.CoreCompileInputs.cache
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.exe
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestServer1\obj\Debug\TestServer1.pdb

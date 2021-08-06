@@ -1,0 +1,30 @@
+C:\Users\ycy\Desktop\Final_Test\bin\Debug\Final_Test.exe.config
+C:\Users\ycy\Desktop\Final_Test\bin\Debug\Final_Test.exe
+C:\Users\ycy\Desktop\Final_Test\bin\Debug\Final_Test.pdb
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.csprojAssemblyReference.cache
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.Form1.resources
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.Properties.Resources.resources
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.csproj.GenerateResource.cache
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.csproj.CoreCompileInputs.cache
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.exe
+C:\Users\ycy\Desktop\Final_Test\obj\Debug\Final_Test.pdb
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\bin\Debug\Final_Test.exe.config
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\bin\Debug\Final_Test.exe
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\bin\Debug\Final_Test.pdb
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.csprojAssemblyReference.cache
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.Form1.resources
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.Properties.Resources.resources
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.csproj.GenerateResource.cache
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.csproj.CoreCompileInputs.cache
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.exe
+C:\Users\ycy\Desktop\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.pdb
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\bin\Debug\Final_Test.exe.config
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\bin\Debug\Final_Test.exe
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\bin\Debug\Final_Test.pdb
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.csprojAssemblyReference.cache
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.Form1.resources
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.Properties.Resources.resources
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.csproj.GenerateResource.cache
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.csproj.CoreCompileInputs.cache
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.exe
+D:\대학자료\20-1 피제프 김성환 교수님\기말고사 프로젝트_16100166 윤인재\TestClient\obj\Debug\Final_Test.pdb

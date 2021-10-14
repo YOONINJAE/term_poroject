@@ -1,7 +1,15 @@
-https://github.com/linorobot/linorobot
+오픈소스 : https://github.com/linorobot/linorobot
+
+깃 내부에 teensy firmware 소스 대신 arduino 코드 자체 개발
+https://github.com/YOONINJAE/Capstone_design/blob/master/motor_test/test
+
+튜토리얼 : https://github.com/linorobot/linorobot/wiki/1.-Getting-Started
 
 개발 기간
 2021-02 ~ 2021-12
+
+개발 내용
+linorobot을 기반으로 개발환경 구성, parmeter 수정, urdf구성, tf 변환, imu callibration을 추가로 odometry를 진행하여 자율주행을 구현함.
 
 개발 환경
 Linux ROS melodic 18.04
@@ -14,5 +22,4 @@ Linux ROS melodic 18.04
 5. Mp3 module : mini
 6. 엔코더 모터 : IG 42 gear ratio-1/17, encoder
 7. battery : LIPO 3CELL 11.1V 2개
-
-linorobot을 기반으로 개발환경 구성, parmeter 수정, urdf구성, tf 변환, imu callibration을 추가로 odometry를 진행하여 자율주행을 구현함.
+8. rs232 to ttl : max3232 converter

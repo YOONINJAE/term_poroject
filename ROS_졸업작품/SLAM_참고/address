@@ -15,16 +15,26 @@ linorobot을 기반으로 개발환경 구성, parmeter 수정, urdf구성, tf �
 Linux ROS melodic 18.04
 
 품목 
-1. mini PC : Jetson Nano
-2. MCU : Arduino MEGA
-3. 모터제어기 : Moonwalker MW-MDC24D100D-v2
-4. IMU module : MPU9250
-5. Mp3 module : mini
-6. 엔코더 모터 : IG 42 gear ratio-1/17, encoder
-7. battery : LIPO 3CELL 11.1V 2개
-8. rs232 to ttl : max3232 converter
-9. LIDAR : RPLIDAR A1
-10. Aluminum plate : 30 x 30 가공 제작
+1. mini PC : Jetson Nano (180,000)
+2. MCU : Arduino MEGA (15,000)
+3. 모터제어기 : Moonwalker MW-MDC24D100D-v2 (210,000)
+4. IMU module : MPU9250 (10,000)
+5. Mp3 module : mini + sd 64GB (10,000)
+6. 엔코더 모터 : IG 42 gear ratio-1/17, encoder (80,000 x2)
+7. battery : LIPO 3CELL 11.1V 6000mah (70,000 x 2)
+8. rs232 to ttl : max3232 converter (900)
+9. LIDAR : RPLIDAR A2 (500,000)
+10. Aluminum plate : 30 x 30 가공 제작 (80,000)
+11. DC-DC converter (Max 8A) : jetson Nano 외부전원 공급시 OUTPUT을 5.44V 정도로 설정해야함.(5V설정시 pc가 중간에 꺼지는 문제 발생)
 
 제작 비용
 150만원 + a
+
+개발 중 큰 문제
+1. Jetson Nano를 사용하면서 개발환경 구축이 매우 어려웠음. 디버깅하며 환경을 구축하는데만 3개월 이상 소요. 코드 복붙한다고 해결되는 문제들이 아닌 경우가 많아, 오류 해결에 시간이 많이듬.
+내년에 더 개발한다고 하면 준데스크탑 급인 NUC를 사용하는게 좋을 듯.(실제로 자율주행 개발자들이 많이 사용함)
+2. CCTV Layer를 odometry map layer와 병합해야 하는데 이에 대한 선행 연구자료가 없음.
+
+내년 졸업작품 팀 개발환경
+mini PC : NUC i3 RAM 8GB, SSD 250, 내장그래픽, 60만원 대 mini pc 사용 예정(구매 완료)
+https://smartstore.naver.com/cynex/products/5225487954?NaPm=ct%3Dkusnzqyu%7Cci%3Dcheckout%7Ctr%3Dppc%7Ctrx%3D%7Chk%3D50069e4286b50753580e973a643c85d184b552a0

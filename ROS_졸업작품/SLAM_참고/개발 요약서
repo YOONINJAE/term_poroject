@@ -17,7 +17,7 @@ Linux ROS melodic 18.04
 설계 tool
 Solidworks - 배터리 케이스, 모터고정부 3D printing
 
-품목 
+품목 (정리 예정)
 1. mini PC : Jetson Nano (180,000)
 2. MCU : Arduino MEGA (15,000)
 3. 모터제어기 : Moonwalker MW-MDC24D100D-v2 (210,000)
@@ -28,7 +28,9 @@ Solidworks - 배터리 케이스, 모터고정부 3D printing
 8. rs232 to ttl : max3232 converter
 9. LIDAR : RPLIDAR A2 (500,000)
 10. Aluminum plate : 30 x 30 가공 제작 (80,000)
-11. DC-DC converter (Max 8A) : jetson Nano 외부전원 공급시 OUTPUT을 5.44V 정도로 설정해야함.(5V설정시 pc가 중간에 꺼지는 문제 발생)
+11. DC-DC converter (Max 8A) : jetson Nano 배럴잭 외부전원 공급시 OUTPUT을 5.44V 정도로 설정해야함.(5V설정시 pc가 중간에 꺼지는 문제 발생)
+12. Jetson nano wifi 안테나 케이블/L-0031-B (16,500)
+13. 인텔 노트북 무선 랜카드 AC8265 NGW WIFI 블루투스 (20,000)
 
 제작 비용
 150만원 + a

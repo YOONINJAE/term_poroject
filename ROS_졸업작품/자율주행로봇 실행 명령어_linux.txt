@@ -1,0 +1,19 @@
+노트북 : 
+원격 데스크톱 연결 - 192.168.1.162 - jo - qlalfqjsgh (비밀번호)
+roslaunch linorobot bringup.launch    (중간에 갑자기 로봇 획 돌아가면 imu 꺼진걸수도 있음 여기서부터 다시켜야댐)          roslaunch linorobot navigate.launch   ( bringup 키고 한 5초 있다가 키면댐)
+
+데탑 :
+roscd lino_visualize/rviz rviz -d navigation.rviz
+rosrun teleop ~
+
+중간에 로봇 획 돌면 일단 rviz로 다시 위치 맞추고 텔레옵으로 파티클 지워 근데도 잘 안되면 bringup부터 키면서 imu 잘 인식 되나 봐야댐.
+ Remote I/O Error 뜨면 imu 에러나느거니까 선뽑았다 다시 껴보고
+
+
+
+가능하면 젯슨에서 catkin_ws/src/linorobot/src/lino_base.cpp 여기 들어가서
+
+    linear_velocity_x_ = vel.linear_x; 
+    linear_velocity_y_ = vel.linear_y;
+
+이렇게 생긴거에 1.5인가 1.7인가 곱해진거 있는데 0.2 정도 낮추고 저장 한담에 catkin make 해주셈
